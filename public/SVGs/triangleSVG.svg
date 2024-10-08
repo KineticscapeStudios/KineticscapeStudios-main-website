@@ -1,9 +1,3 @@
-<svg width="36" height="30" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18 0L35.3205 30H0.679491L18 0Z" fill="url(#paint0_linear_755_1341)"/>
-<defs>
-<linearGradient id="paint0_linear_755_1341" x1="-12" y1="10.5" x2="43.5" y2="40" gradientUnits="userSpaceOnUse">
-<stop stop-color="#EB847F"/>
-<stop offset="1" stop-color="#DA5049"/>
-</linearGradient>
-</defs>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:4d947fc875b4f0edc899aa6a806dfb2ba3df42da27c51f14be58e25adcb2b83b
+size 398
