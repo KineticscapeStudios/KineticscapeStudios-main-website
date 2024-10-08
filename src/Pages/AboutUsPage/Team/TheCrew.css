@@ -1,0 +1,38 @@
+.the-crew-wrapper {
+  position: relative;
+  margin-top: 130px;
+  width: 100vw;
+}
+
+.the-crew-content {
+}
+
+.the-crew-head {
+  background: linear-gradient(45deg, #6574cc, #8e9cea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 7rem;
+  width: 50%;
+
+  margin-left: 70px;
+}
+
+.the-crew-arrow {
+  position: absolute;
+  padding-top: 64px;
+  padding-left: 100px;
+}
+
+.the-crew-carousel {
+  position: relative;
+  display: flex; /* Flexbox for horizontal slide alignment */
+}
+
+.carousel-item {
+  transition: transform 0.5s ease;
+}
+
+.carousel-item img {
+  width: 100%; /* Ensure images fill the slide */
+  max-height: 80vh; /* Limit the image height */
+}

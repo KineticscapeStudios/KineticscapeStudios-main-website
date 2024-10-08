@@ -1,0 +1,110 @@
+.why-us-container {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: #f2f2f2;
+  position: relative;
+  z-index: 10;
+}
+.why-us-wrapper {
+  margin: 4%;
+  background-color: #cfcfcf;
+  border-radius: 101px;
+}
+.why-us-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding-bottom: 3%;
+}
+.why-us-sub-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 5%;
+  padding: 3% 0;
+  border-top: 1px solid black;
+  gap: 30px;
+}
+.why-us-card {
+  width: 33%;
+  height: 100%;
+}
+.why-us-sub-info {
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 50px;
+  width: 100%;
+  padding: 37% 0;
+  font-size: 1.875rem;
+  gap: 20px;
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+.why-us-card {
+  perspective: 1000px; /* Add perspective for 3D effect */
+
+  transform-style: preserve-3d; /* Enable 3D transformations */
+}
+.why-us-sub-inner {
+  margin: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d; /* Enable 3D transformations */
+  transition: transform 1s; /* Smooth flipping transition */
+}
+.why-us-sub-inner .front,
+.why-us-sub-inner .back {
+  position: absolute;
+  width: 80%;
+  backface-visibility: hidden; /* Hide the back face when flipped */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 20px;
+}
+.why-us-sub-inner .front {
+  background-color: inherit; /* Inherit background color */
+  z-index: 10;
+  transform: rotateY(0deg); /* Default front face rotation */
+}
+
+.why-us-content-heading {
+  font-size: 3.5rem;
+  margin: 0 5%;
+}
+
+.why-us-heading {
+  display: flex;
+  align-items: center;
+  top: 0;
+  font-size: 4rem;
+  text-align: left;
+  padding: 5% 5% 0;
+  color: black;
+}
+.why-us-heading-left {
+  display: flex;
+  flex-direction: column;
+}
+.why-us-heading-left {
+  font-size: 5rem;
+  color: #10343d;
+}
+.why-us-heading-left :nth-child(1) {
+  font-size: 5.375rem;
+  color: black;
+  padding-bottom: 1%;
+}
+
+.sub-blue {
+  background-color: #1db4bd;
+}
+.sub-white {
+  background-color: white;
+  color: black;
+}
+.sub-black {
+  background-color: black;
+}

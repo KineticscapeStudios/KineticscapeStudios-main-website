@@ -1,0 +1,93 @@
+.main-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+.main-page-marquee-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.marquee-wrapper {
+  margin-bottom: -80px; /* Reduce the spacing between marquees */
+  transform: rotate(10deg);
+  transform-origin: center;
+  margin-left: -100px;
+  overflow: visible;
+}
+
+.scroll-to-explore {
+  position: absolute;
+  bottom: 20px; /* Padding from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to center properly */
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  z-index: 10;
+  padding: 10px 20px; /* Optional padding around the text */
+}
+
+.click-Info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  z-index: 10;
+  transform: translateY(-50%);
+  top: 40%;
+  right: 5%;
+}
+.click-Info span {
+  max-width: 100px;
+  text-align: center;
+}
+.click-Info img {
+  max-width: 30px;
+}
+
+._text3 {
+  display: inline-block; /* Ensure the spans are displayed inline */
+  opacity: 1; /* Start with opacity 0 for fade-in effect */
+  transform: translateX(0); /* Ensure there's no transformation initially */
+  white-space: nowrap; /* Prevent wrapping of text */
+}
+@media (max-width: 430px) {
+  .click-Info {
+    top: 58%;
+    right: 32%;
+    img {
+      max-width: 25px;
+    }
+  }
+  .scroll-to-explore {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 375px) {
+  .click-Info {
+    top: 65%;
+    right: 30%;
+  }
+  .scroll-to-explore {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 360px) {
+  .click-Info {
+    top: 68%;
+    right: 27%;
+  }
+}
+@media (max-width: 360px) {
+  .click-Info {
+    top: 57%;
+    right: 27%;
+  }
+}

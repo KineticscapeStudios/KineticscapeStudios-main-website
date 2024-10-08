@@ -1,0 +1,21 @@
+.main-head {
+  position: relative;
+  font-size: 7.125rem;
+  color: black;
+  z-index: 10;
+  text-transform: uppercase;
+  left: 0;
+  text-align: center;
+  margin: 20%;
+  font-weight: 700;
+}
+.main-page-overlay-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #eaeaea;
+  z-index: 10;
+}

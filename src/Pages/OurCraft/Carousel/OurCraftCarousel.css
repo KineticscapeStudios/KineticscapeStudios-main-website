@@ -1,0 +1,69 @@
+.our-craft-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+.our-craft-carousel-wrapper h1 {
+  position: relative;
+  font-size: 4rem;
+  color: white;
+  left: 80%;
+  z-index: 2;
+  top: 5%;
+}
+
+.our-craft-carousel-wrapper h1:nth-child(2) {
+  color: #6b8cf2;
+  line-height: 0;
+}
+.carousel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+  position: absolute;
+  top: 35%;
+  left: 80%;
+}
+
+.carousel-item {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  width: 70%;
+}
+
+.carousel-item-content {
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.carousel-item-number {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+.carousel-item-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: left;
+}
+
+.carousel-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}

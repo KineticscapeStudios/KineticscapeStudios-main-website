@@ -1,0 +1,37 @@
+.home-page-about-us-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home-page-about-us-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
+}
+
+.about-us-heading {
+  padding-top: 3%;
+  color: black;
+  font-size: 5.375rem;
+  border-bottom: 1px solid black;
+}
+
+.about-us-content {
+  font-family: "Helvetica Light";
+  font-size: 2rem;
+  font-weight: normal;
+}
+.about-us-see-more {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.about-us-see-more:hover {
+  color: #1db4bd;
+}
+
+.red-text {
+  color: #da5049;
+}
