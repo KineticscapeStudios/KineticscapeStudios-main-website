@@ -41,3 +41,24 @@
   align-items: center;
   gap: 20px;
 }
+@media (max-width: 500px) {
+  img {
+    max-width: 50px;
+  }
+  .cta-heading-wrapper span {
+    font-size: 2rem;
+  }
+  .cta-socials-wrapper {
+    font-size: 0.5rem;
+    gap: 10px;
+  }
+  .socials {
+    gap: 10px;
+  }
+  .socials img {
+    max-width: 20px;
+  }
+  .cta-container {
+    height: 30vh;
+  }
+}

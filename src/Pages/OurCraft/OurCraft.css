@@ -1,4 +1,8 @@
 .our-craft-wrapper {
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+.our-craft-projects--container {
+  position: relative;
 }

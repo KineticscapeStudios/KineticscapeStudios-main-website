@@ -9,9 +9,13 @@ const OurCraft: React.FC = () => {
   return (
     <div className="our-craft-wrapper">
       <LogoHeader></LogoHeader>
-      <OurCraftCarousel></OurCraftCarousel>
-      <CTA></CTA>
-      <Footer></Footer>
+
+      <div className="our-craft-projects--container">
+        <OurCraftCarousel></OurCraftCarousel>
+      </div>
+      <div className="our-crafts-cta">
+        <CTA></CTA>
+      </div>
     </div>
   );
 };

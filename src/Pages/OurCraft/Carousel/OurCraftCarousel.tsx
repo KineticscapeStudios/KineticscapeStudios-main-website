@@ -50,55 +50,29 @@ const projects = [
   },
 ];
 const OurCraftCarousel: React.FC = () => {
-  const listRef = useRef<HTMLUListElement | null>(null);
-  const videosRef = useRef<HTMLVideoElement[]>([]);
   const navigate = useNavigate();
+  const wrapperRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    const listItems = listRef.current?.querySelectorAll(".carousel-item");
-
-    // Set initial styles for carousel items
-    gsap.set(listItems!, { opacity: 0.6, scale: 0.9 });
-
-    // Mouse hover and leave animations
-    listItems?.forEach((item, index) => {
-      item.addEventListener("mouseenter", () => {
-        gsap.to(item, { opacity: 1, scale: 1.1, duration: 0.3 });
-        videosRef.current[index].play();
-        gsap.to(videosRef.current[index], { autoAlpha: 1, duration: 0.5 });
-      });
-
-      item.addEventListener("mouseleave", () => {
-        gsap.to(item, { opacity: 0.6, scale: 0.9, duration: 0.3 });
-        videosRef.current[index].pause();
-        videosRef.current[index].currentTime = 0;
-        gsap.to(videosRef.current[index], { autoAlpha: 0, duration: 0.5 });
-      });
-    });
-
-    // Vertical scroll effect
-    const handleMouseMove = (event: MouseEvent) => {
-      const listHeight = listRef.current!.clientHeight;
-      const posY = event.clientY - listRef.current!.offsetTop;
-      const offset = (-posY / window.innerHeight) * listHeight;
-      gsap.to(listRef.current, { y: offset, ease: "power4.out" });
-    };
-
-    // Add the mousemove event listener to the container
-    listRef.current?.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      // Clean up event listeners on component unmount
-      listRef.current?.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+    const logoHeader =
+      document.querySelector<HTMLDivElement>(".logo-container");
+    const ctaSection =
+      document.querySelector<HTMLDivElement>(".our-crafts-cta");
+    if (logoHeader) {
+      const offsetHeight = logoHeader.offsetHeight;
+      console.log(offsetHeight);
+      wrapperRef.current!.style.top = offsetHeight + "px";
+      ctaSection!.style.marginTop = offsetHeight + "px";
+    }
+  });
   return (
-    <div className="our-craft-carousel-wrapper">
-      <h1>OUR</h1>
-      <h1>CRAFTS</h1>
+    <div className="our-craft-carousel-wrapper" ref={wrapperRef}>
+      <div className="our-craft-heading">
+        <h1>OUR CRAFTS</h1>
+      </div>
 
-      <ul className="carousel-list" ref={listRef}>
+      <div className="carousel-list">
         {projects.map((project, index) => (
-          <li
+          <div
             className="carousel-item"
             key={project.id}
             data-item-id={index}
@@ -107,18 +81,23 @@ const OurCraftCarousel: React.FC = () => {
               navigate(`/case-studies/${project.route}`);
             }}
           >
+            <div className="carousel-project-image">
+              {/* <img className="carousel-video" src={project.videoUrl} /> */}
+            </div>
+
             <div className="carousel-item-content">
               <h2 className="carousel-item-title">{project.title}</h2>
+              <div className="carousel-item-tags">
+                <div className="carousel-project-tag">Lorem</div>
+              </div>
+              <div className="view-project-btn">
+                <span>View project</span>
+                <img src="" alt="" />
+              </div>
             </div>
-            <video
-              ref={(el) => (videosRef.current[index] = el!)}
-              className="carousel-video"
-              src={project.videoUrl}
-              muted
-            />
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <div className="c-gradient-overlay"></div>
     </div>
   );

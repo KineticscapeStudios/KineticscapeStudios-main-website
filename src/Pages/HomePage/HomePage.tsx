@@ -28,13 +28,12 @@ const HomePage: React.FC = () => {
       <div className="main-page-about-us">
         <AboutUsComp></AboutUsComp>
       </div>
-      <div className="empty-space-forreveal"></div>
       <div className="main-page-services">
         <ServicesPage></ServicesPage>
       </div>
-      <div className="main-page-why-us">
+      {/* <div className="main-page-why-us">
         <WhyUS />
-      </div>
+      </div> */}
       <div className="main-page-our-craft">
         <OurProjects></OurProjects>
       </div>
