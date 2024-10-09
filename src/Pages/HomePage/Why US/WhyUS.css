@@ -7,6 +7,7 @@
   z-index: 10;
 }
 .why-us-wrapper {
+  position: relative;
   margin: 4%;
   background-color: #cfcfcf;
   border-radius: 101px;
@@ -23,31 +24,18 @@
   justify-content: space-between;
   margin: 0 5%;
   padding: 3% 0;
-  border-top: 1px solid black;
   gap: 30px;
 }
 .why-us-card {
-  width: 33%;
-  height: 100%;
+  width: 504px;
+  height: 305px;
+  perspective: 1000px;
 }
-.why-us-sub-info {
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 50px;
-  width: 100%;
-  padding: 37% 0;
-  font-size: 1.875rem;
-  gap: 20px;
-  cursor: pointer; /* Change cursor to indicate interactivity */
-}
-.why-us-card {
-  perspective: 1000px; /* Add perspective for 3D effect */
 
-  transform-style: preserve-3d; /* Enable 3D transformations */
-}
 .why-us-sub-inner {
-  margin: 0 5%;
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d; /* Enable 3D transformations */
@@ -56,18 +44,31 @@
 .why-us-sub-inner .front,
 .why-us-sub-inner .back {
   position: absolute;
-  width: 80%;
+  width: 100%;
+  height: 100%;
   backface-visibility: hidden; /* Hide the back face when flipped */
+  -webkit-backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   gap: 20px;
+  font-size: 1.875rem;
+  border-radius: 50px;
 }
-.why-us-sub-inner .front {
-  background-color: inherit; /* Inherit background color */
+.why-us-card:hover .why-us-sub-inner {
+  transform: rotateY(180deg);
+}
+.why-us-sub-inner .front img {
+  margin-left: 10%;
+}
+.why-us-sub-inner .back span {
+  margin: 5%;
+}
+.why-us-sub-inner .back {
   z-index: 10;
-  transform: rotateY(0deg); /* Default front face rotation */
+  transform: rotateY(180deg); /* Default front face rotation */
+  text-align: center;
 }
 
 .why-us-content-heading {
@@ -98,13 +99,48 @@
   padding-bottom: 1%;
 }
 
-.sub-blue {
+.content-blue {
   background-color: #1db4bd;
+  color: white;
 }
-.sub-white {
+.content-white {
   background-color: white;
   color: black;
 }
-.sub-black {
+.content-black {
   background-color: black;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .why-us-heading-left :nth-child(1) {
+    font-size: 1rem;
+  }
+  .why-us-heading-left {
+    font-size: 0.75rem;
+  }
+  .why-us-sub-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-us-card {
+    width: 285px;
+    height: 143px;
+  }
+  .why-us-sub-inner .front,
+  .why-us-sub-inner .back {
+    font-size: 0.75rem;
+  }
+  .why-us-heading {
+    padding: 15% 15% 0;
+  }
+  .why-us-content {
+    padding: 0 10%;
+  }
+  .why-us-wrapper {
+    padding-bottom: 10%;
+  }
+  .why-us-container img {
+    max-width: 20px;
+  }
 }

@@ -25,13 +25,7 @@
 }
 
 .case-study-title span {
-  background: linear-gradient(
-    to right,
-    #ffffff 50%,
-    #6b8cf2 50%
-  ); /* Adjust the colors and the 50% to change the split */
-  -webkit-background-clip: text;
-  color: transparent;
+  color: white;
 }
 .case-study-tags {
   display: flex;
@@ -39,10 +33,10 @@
 }
 
 .case-study-perTag {
-  font-family: "Lora", system-ui;
-  font-weight: 500;
+  font-family: "Helvetica Light";
+  font-weight: 550;
   text-transform: uppercase;
-  border: 1.2px solid #6b8cf2;
+  border: 1.2px solid #78e5e9;
   border-radius: 10px;
   padding: 10px;
 }

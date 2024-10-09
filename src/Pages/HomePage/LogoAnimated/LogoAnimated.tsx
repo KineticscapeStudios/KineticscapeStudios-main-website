@@ -100,7 +100,6 @@ const LogoAnimated: React.FC = () => {
           end: "bottom+=20% top",
           scrub: true,
           immediateRender: false,
-          markers: true,
         },
         onUpdate,
       }).to(target, {
@@ -145,7 +144,6 @@ const LogoAnimated: React.FC = () => {
       scrollTrigger: {
         trigger: ".services-heading-wrapper",
         start: "bottom top",
-        markers: true,
         scrub: true,
       },
     });

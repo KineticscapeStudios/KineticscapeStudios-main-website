@@ -1,69 +1,89 @@
 .our-craft-carousel-wrapper {
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 .our-craft-carousel-wrapper h1 {
   position: relative;
   font-size: 4rem;
-  color: white;
-  left: 80%;
+  color: black;
   z-index: 2;
-  top: 5%;
+  margin: 0% 5%;
 }
 
-.our-craft-carousel-wrapper h1:nth-child(2) {
-  color: #6b8cf2;
-  line-height: 0;
-}
 .carousel-list {
-  list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 0px;
-  position: absolute;
-  top: 35%;
-  left: 80%;
+  position: relative;
+  row-gap: 50px;
+  column-gap: 50px;
+  margin: 5%;
 }
 
 .carousel-item {
   position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 700px;
   cursor: pointer;
-  width: 70%;
+  width: 536px;
+  height: 100%;
+  background-color: black;
+  border-radius: 80px;
 }
 
 .carousel-item-content {
   color: white;
   text-align: center;
   z-index: 2;
-}
-
-.carousel-item-number {
-  font-size: 2rem;
-  font-weight: bold;
-  display: block;
+  padding: 2% 5% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .carousel-item-title {
-  font-size: 1rem;
+  font-size: 2.25rem;
   text-transform: uppercase;
   font-weight: 800;
   text-align: left;
 }
-
-.carousel-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.carousel-item-tags {
+  display: flex;
+  padding: 0 0 4%;
+}
+.carousel-project-tag {
+  border-radius: 100px;
+  border: 1px solid white;
+  padding: 2% 5%;
+}
+.carousel-project-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1;
+  height: 379px;
+  background-color: #c7c7c7;
+  border-radius: 50px;
+}
+
+.view-project-btn {
+  align-self: flex-start;
+  font-size: 2.25rem;
+  padding: 3% 5%;
+  border: 1px solid #1db4bd;
+  border-radius: 50px;
+
+  transition: 1s ease;
+}
+.carousel-item:hover {
+  .view-project-btn {
+    background-color: rgb(29, 181, 189);
+    color: black;
+    box-shadow: 0 5px 12px 0 rgba(29, 181, 189, 0.5);
+  }
 }

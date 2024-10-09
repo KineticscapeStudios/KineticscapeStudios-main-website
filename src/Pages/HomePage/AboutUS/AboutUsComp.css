@@ -1,20 +1,22 @@
 .home-page-about-us-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-color: #f2f2f2;
 }
 
 .home-page-about-us-wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 5%;
+  margin: 5% 5%;
+  justify-content: center;
+  height: 100%;
 }
 
 .about-us-heading {
-  padding-top: 3%;
+  padding: 3% 0;
   color: black;
   font-size: 5.375rem;
-  border-bottom: 1px solid black;
 }
 
 .about-us-content {
@@ -23,6 +25,7 @@
   font-weight: normal;
 }
 .about-us-see-more {
+  font-size: 2rem;
   text-decoration: underline;
   cursor: pointer;
   transition: 0.5s ease;
@@ -34,4 +37,15 @@
 
 .red-text {
   color: #da5049;
+}
+@media (max-width: 500px) {
+  .about-us-heading {
+    font-size: 3rem;
+  }
+  .about-us-content {
+    font-size: 1.5rem;
+  }
+  .about-us-see-more {
+    font-size: 1.5rem;
+  }
 }

@@ -1,7 +1,7 @@
 .our-projects-container {
   width: 100%;
   height: 100%;
-  margin-top: 10%;
+  padding-top: 3%;
   position: relative;
   z-index: 2;
 }
@@ -9,13 +9,12 @@
 .our-projects-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 5%;
 }
 
 .our-projects-heading {
   width: 100%;
-  border-bottom: 1px solid black;
   font-size: 5.375rem;
+  margin: 0 5%;
 }
 
 .our-projects-list {
@@ -23,41 +22,89 @@
   margin: 5% 0;
   overflow: hidden;
   align-self: flex-start;
+  height: 100%;
 }
 
 .project-video {
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 50%;
   border-radius: 50px;
   background-color: #818181;
+  margin: 0 5%;
 }
 .projects-wrapper {
-  width: 600px;
-  padding: 0 3%;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.project-description-wrapper {
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 30px;
-  border-right: 1px solid black;
 }
 .project-heading {
-  font-family: "Helvetica Light";
   font-size: 3.75rem;
   font-weight: normal;
-  align-self: center;
+  width: 100%;
 }
 
 .project-content {
-  align-self: center;
   font-size: 2.375rem;
   font-family: "Helvetica Light";
+  padding-top: 2%;
 }
 
 .projects-viewmore-btn {
   margin: 5% 0;
   background-color: black;
-  align-self: center;
   color: white;
-  padding: 2% 3%;
-  border-radius: 50px;
+  padding: 5% 2%;
+  border-radius: 30px;
   font-size: 3.125rem;
+  width: 50%;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .our-projects-wrapper {
+    padding: 3% 0;
+  }
+  .our-projects-heading {
+    margin: 0 10%;
+    font-size: 3rem;
+  }
+  .our-projects-list {
+    margin: 3% 0;
+  }
+  .project-heading {
+    font-size: 2rem;
+    border-bottom: none;
+    padding: 0 2%;
+  }
+  .project-content {
+    font-size: 1.5rem;
+    padding: 0 2%;
+  }
+  .projects-viewmore-btn {
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  .projects-wrapper {
+    flex-direction: column-reverse;
+    margin: 5% 0;
+  }
+  .project-description-wrapper {
+    width: 100%;
+    gap: 10px;
+  }
+  .project-video {
+    height: 300px;
+    width: 300px;
+  }
 }

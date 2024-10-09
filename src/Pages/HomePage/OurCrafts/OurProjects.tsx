@@ -15,36 +15,39 @@ const projectList: Project[] = [
   {
     heading: "Project 1",
     videoUrl: "https://path-to-your-video1.mp4", // Replace with actual video URL
-    description: `<span style="color: red;">This is a project description with</span> colorful text.`,
+    description: `This is a project description with colorful text.`,
   },
   {
     heading: "Project 2",
     videoUrl: "https://path-to-your-video1.mp4", // Replace with actual video URL
-    description: `<span style="color: red;">This is a project description with</span> colorful text.`,
+    description: `This is a project description with colorful text.`,
   },
   {
     heading: "Project 3",
     videoUrl: "https://path-to-your-video1.mp4", // Replace with actual video URL
-    description: `<span style="color: red;">This is a project description with</span> colorful text.`,
+    description: `This is a project description with colorful text.`,
   },
   {
     heading: "Project 4",
     videoUrl: "https://path-to-your-video1.mp4", // Replace with actual video URL
-    description: `<span style="color: red;">This is a project description with</span> colorful text.`,
+    description: `This is a project description with colorful text.`,
   },
   {
     heading: "Project 5",
     videoUrl: "https://path-to-your-video1.mp4", // Replace with actual video URL
-    description: `<span style="color: red;">This is a project description with</span> colorful text.`,
+    description: `This is a project description with colorful text.`,
   },
   // Add more projects here
 ];
 const OurProjects: React.FC = () => {
   const listRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    gsap.to(".projects-wrapper", {
-      xPercent: -100 * (projectList.length - 1),
-      ease: "none",
+    const projectSections =
+      gsap.utils.toArray<HTMLElement>(".projects-wrapper");
+    let tl = gsap.timeline({
+      defaults: {
+        ease: "none",
+      },
       scrollTrigger: {
         trigger: ".our-projects-container",
         pin: true,
@@ -53,28 +56,62 @@ const OurProjects: React.FC = () => {
         end: () => "+=" + listRef.current!.offsetWidth,
       },
     });
+    tl.to(".projects-wrapper", {
+      xPercent: -100 * (projectList.length - 1),
+    });
+
+    projectSections.forEach((el, index) => {
+      const content = el!.querySelector(".project-description-wrapper");
+      const video = el!.querySelector(".project-video");
+      tl.from(content, {
+        yPercent: -50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: el,
+          start: "left center",
+          end: "center center",
+          containerAnimation: tl,
+          scrub: true,
+        },
+      }).from(video, {
+        yPercent: 50,
+        xPercent: 50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: el,
+          start: "left center",
+          end: "center center",
+          containerAnimation: tl,
+          scrub: true,
+        },
+      });
+    });
   }, []);
   return (
     <div className="our-projects-container">
       <div className="our-projects-wrapper">
         <div className="our-projects-heading">
-          <span>OUR CRAFTS</span>
+          <span>Our crafts</span>
         </div>
         <div className="our-projects-list" ref={listRef}>
           {projectList.map((project, index) => (
             <div className="projects-wrapper" key={index}>
-              <div className="project-heading">{project.heading}</div>
+              <div className="project-description-wrapper">
+                <div className="project-heading">{project.heading}</div>
+                <div
+                  className="project-content"
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                ></div>
+                <div className="projects-viewmore-btn">
+                  <span>View More...</span>
+                </div>
+              </div>
               <div className="project-video">
                 {/* <video src={project.videoUrl} controls /> */}
               </div>
-              <div
-                className="project-content"
-                dangerouslySetInnerHTML={{ __html: project.description }}
-              ></div>
             </div>
           ))}
         </div>
-        <div className="projects-viewmore-btn">View More...</div>
       </div>
     </div>
   );
