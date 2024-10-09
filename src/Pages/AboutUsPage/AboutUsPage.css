@@ -1,0 +1,30 @@
+
+.about-us-page-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F2F2;
+}
+
+
+.image-section {
+  width: 100%;
+  height: 100vh; 
+  position: relative;
+}
+
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pipeline-section {  
+  width: 100%;
+  padding: 50px 0; 
+  position: relative;
+}
+
+

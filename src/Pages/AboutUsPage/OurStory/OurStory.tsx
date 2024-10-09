@@ -4,12 +4,7 @@ import "./OurStory.css";
 const OurStory: React.FC = () => {
   return (
     <div className="our-story-wrapper">
-      <div className="bg-image-our-story">
-        <img
-          src="/public/Images/Backgrounds/AboutUs/OurStory/OurStoryBG.png"
-          alt=""
-        />
-      </div>
+      
       <div className="our-story-content">
         <div className="our-story-info">
           <span>
@@ -21,8 +16,8 @@ const OurStory: React.FC = () => {
           </span>
         </div>
         <div className="head-ourstory">
-          <h1>Our</h1>
-          <h1>Story</h1>
+          <span>Our</span><br/>
+          <span>Story</span>
         </div>
       </div>
     </div>
