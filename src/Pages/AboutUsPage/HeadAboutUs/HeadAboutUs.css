@@ -1,20 +1,30 @@
-.head-about-us-wrapper{
+.head-about-us-wrapper {
     width: 100vw;
-    height: 100%;
-}
-
-.overlay-wrapper{
+    height: 100vh;
     position: relative;
-    font-size: 3rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay-wrapper h1 {
+    position: relative; 
+    font-size: 4.2rem;
+    font-family:"Helvetica";
     font-weight: 700;
-    color: white;
-    text-align: center;
-    margin: 300px 300px;
-    margin-top: 300px;
-    margin-left: 300px;
-
-}
-
-.images-wrapper{
-
-}
+    color: rgb(0, 0, 0); 
+    text-align: center; 
+    margin: 0; 
+    padding: 20px;
+    z-index: 2;
+  }
+  
+  .scroll-to-explore {
+    position: absolute;
+    bottom: 20px;
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+    z-index: 2;
+  }
