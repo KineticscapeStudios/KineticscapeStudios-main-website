@@ -144,7 +144,6 @@ const CaseStudy: React.FC = () => {
         </div>
       </div>
       <CTA></CTA>
-      <Footer></Footer>
     </div>
   );
 };
