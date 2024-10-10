@@ -27,8 +27,6 @@ const projectData = {
       "/public/CaseStudies/ImmersiveEstate/Images/dummies/dummy1.png",
       "/public/CaseStudies/ImmersiveEstate/Images/dummies/dummy1.png",
       "/public/CaseStudies/ImmersiveEstate/Images/dummies/dummy1.png",
-      "/public/CaseStudies/ImmersiveEstate/Images/dummies/dummy1.png",
-      "/public/CaseStudies/ImmersiveEstate/Images/dummies/dummy1.png",
     ],
     catchyHeading: "Step into Shopping: Explore the 3D Interactive Webstore",
   },
@@ -80,65 +78,45 @@ const CaseStudy: React.FC = () => {
       <div className="case-study-video">
         <video src={project.videoUrl} autoPlay loop muted playsInline></video>
       </div>
-      <div id="point-text-id" className="case-study-point">
-        <div className="point-image-container">
-          <div className="point-image-border"></div>
-          <div className="point-image">
-            <img src={project!.infoImgUrl} alt="" />
-          </div>
-        </div>
-        <div className="point-text-wrapper">
-          <div className="point-text-content">
-            <div className="point-text-heading">
-              <span>
-                HOW WE <span className="text-color">DID IT</span>
-              </span>
-            </div>
-            <div className="point-text-para">
-              <span dangerouslySetInnerHTML={{ __html: project.how }}></span>
+      <div className="case-study-point-wrapper">
+        <div id="point-text-id" className="case-study-point">
+          <div className="point-image-container">
+            <div className="point-image">
+              <img src={project!.infoImgUrl} alt="" />
             </div>
           </div>
-          <img src={ArrowSVG} alt="" />
+          <div className="point-text-wrapper">
+            <div className="point-text-content">
+              <div className="point-text-heading">
+                <svg
+                  width="55"
+                  height="55"
+                  viewBox="0 0 55 55"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="27.5" cy="27.5" r="27.5" fill="#F3B1AE" />
+                </svg>
+
+                <span>
+                  HOW WE <span className="text-color">DID IT</span>
+                </span>
+              </div>
+              <div className="point-text-para">
+                <span dangerouslySetInnerHTML={{ __html: project.how }}></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="case-study-images-carousel">
-        <Splide
-          options={{
-            perPage: 3,
-            start: 0,
-            focus: "center",
-            gap: "1rem",
-            autoplay: false,
-            wheel: true,
-            padding: { left: "5rem", right: "5rem" },
-            arrows: false,
-            pagination: false,
-          }}
-          onMove={handleMove}
-        >
-          <SplideSlide>
-            <div className="carousel-image-container">
-              <div className="carousel-image"></div>
-            </div>
-          </SplideSlide>
-          {project.imageUrls.map((image, index) => (
-            <SplideSlide key={index}>
-              <div className="carousel-image-container">
-                <div className="carousel-image-border"></div>
-                <div className="carousel-image">
-                  <img src={image} alt="" />
-                </div>
-              </div>
-            </SplideSlide>
-          ))}
-        </Splide>
+      <div className="case-study-image-grid-wrapper">
+        {project.imageUrls.map((url, index) => (
+          <div className={`grid-item grid-item-${index + 1}`} key={index}>
+            <img src={url} alt={`Project image ${index + 1}`} />
+          </div>
+        ))}
       </div>
       <div className="catchy-wrapper">
-        <img
-          className="catchy-bg"
-          src="/public/Images/Backgrounds/CaseStudy/catchy.png"
-          alt=""
-        />
         <div id="case-study-cta" className="case-study-catchy-heading">
           <span>Step into Shopping: Explore the 3D Interactive Webstore</span>
         </div>

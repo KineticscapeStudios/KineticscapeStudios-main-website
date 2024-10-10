@@ -1,22 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./ContactUsPage.css";
-import Footer from "../../Footer/Footer";
+import SmallCTA from "../../SmallCTA";
 import ContactForm from "./Form/ContactForm";
 import LogoHeader from "../HomePage/MainPage/LogoHeader";
+import { useGSAP } from "@gsap/react";
 const ContactUsPage: React.FC = () => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useGSAP(() => {
+    const logoHeader =
+      document.querySelector<HTMLDivElement>(".logo-container");
+    if (logoHeader) {
+      const offsetHeight = logoHeader.offsetHeight;
+      console.log(offsetHeight);
+      wrapperRef.current!.style.top = offsetHeight + "px";
+    }
+  });
   return (
-    <div className="contact-us-page-wrapper">
+    <div className="contact-us-page-container">
       <LogoHeader></LogoHeader>
-      <div className="contact-us-main-header">
-        <span>CONTACT</span>
-        <span>US</span>
+      <div className="contact-us-page-wrapper" ref={wrapperRef}>
+        <div className="contact-us-page-header">
+          <span>Contact US</span>
+          <span>We're Excited To Talk About Your Next Big Idea!</span>
+        </div>
+        <div className="contact-us-form-container">
+          <ContactForm></ContactForm>
+        </div>
+        <SmallCTA></SmallCTA>
       </div>
-      <div className="contact-us-page-header">
-        <h1>SAY HELLO</h1>
-        <span>We're Excited To Talk About Your Next Big Idea!</span>
-      </div>
-      <ContactForm></ContactForm>
-      <Footer></Footer>
     </div>
   );
 };
