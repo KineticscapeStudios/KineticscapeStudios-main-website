@@ -86,6 +86,17 @@ const OurProjects: React.FC = () => {
         },
       });
     });
+
+    gsap.from(".our-projects-heading", {
+      opacity: 0,
+      xPercent: -100,
+      scrollTrigger: {
+        trigger: ".our-projects-container",
+        start: "top bottom",
+        end: "top 30%",
+        scrub: true,
+      },
+    });
   }, []);
   return (
     <div className="our-projects-container">

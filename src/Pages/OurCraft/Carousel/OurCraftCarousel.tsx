@@ -63,7 +63,54 @@ const OurCraftCarousel: React.FC = () => {
       wrapperRef.current!.style.top = offsetHeight + "px";
       ctaSection!.style.marginTop = offsetHeight + "px";
     }
-  });
+    const carouselItems = gsap.utils.toArray<HTMLDivElement>(".carousel-item");
+
+    carouselItems.forEach((item, index) => {
+      gsap.fromTo(
+        item,
+        { opacity: 0, y: 100 }, // Initial state
+        {
+          opacity: 1,
+          y: 0, // Final state
+          duration: 1,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%", // Start animation when top of the item is 80% into viewport
+            end: "top 50%", // End animation when top of the item is at 50% of the viewport
+            toggleActions: "play none none reverse", // Play animation on scroll up and down
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    const carouselItemTitle = gsap.utils.toArray<HTMLDivElement>(
+      ".carousel-item-title"
+    );
+    carouselItemTitle.forEach((element) =>
+      gsap.from(element, {
+        opacity: 0,
+        xPercent: -100,
+
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom",
+          end: "top 95%",
+          scrub: 2,
+        },
+      })
+    );
+
+    gsap.from(".our-craft-heading", {
+      opacity: 0,
+      xPercent: -100,
+      scrollTrigger: {
+        trigger: ".our-craft-heading",
+        start: "top bottom",
+      },
+    });
+  }, []);
   return (
     <div className="our-craft-carousel-wrapper" ref={wrapperRef}>
       <div className="our-craft-heading">

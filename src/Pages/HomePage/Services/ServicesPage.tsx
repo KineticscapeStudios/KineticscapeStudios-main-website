@@ -10,6 +10,54 @@ import TriangleSVG from "/public/SVGs/triangleSVG.svg";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 const ServicesPage: React.FC = () => {
+  useGSAP(() => {
+    gsap.from(".services-heading-black", {
+      opacity: 0,
+      xPercent: -100,
+      scrollTrigger: {
+        trigger: ".services-heading-wrapper",
+        start: "top bottom",
+        end: "top 30%",
+        scrub: true,
+      },
+    });
+    gsap.from(".services-heading-blue", {
+      opacity: 0,
+      xPercent: -100,
+      scrollTrigger: {
+        trigger: ".services-heading-wrapper",
+        start: "top bottom",
+        end: "top 30%",
+        scrub: true,
+      },
+    });
+    gsap.from(".services-content-wrapper", {
+      opacity: 0,
+      xPercent: 100,
+      scrollTrigger: {
+        trigger: ".services-sticky-wrapper",
+        start: "top bottom",
+        end: "top 30%",
+        scrub: true,
+      },
+    });
+
+    const servicesHeading = gsap.utils.toArray<HTMLDivElement>(
+      ".services-sticky-content-heading"
+    );
+    servicesHeading.forEach((element) => {
+      gsap.from(element, {
+        opacity: 0,
+        xPercent: 100,
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom",
+          end: "top 30%",
+          scrub: true,
+        },
+      });
+    });
+  }, []);
   return (
     <div className="services-page-wrapper">
       <div className="services-heading-wrapper">

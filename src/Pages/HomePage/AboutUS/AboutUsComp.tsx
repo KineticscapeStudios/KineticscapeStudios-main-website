@@ -15,6 +15,16 @@ const AboutUsComp: React.FC = () => {
     // Split the text into individual characters using SplitType library
     const splitText = new SplitType(contentRef.current!, { types: "chars" });
 
+    gsap.from(".about-us-heading", {
+      opacity: 0,
+      xPercent: -100,
+      scrollTrigger: {
+        trigger: ".home-page-about-us-container",
+        start: "top 80%", // Start revealing when 80% from the top
+        end: "top 30%", // End when 20% from the bottom
+        scrub: true, // Smooth scroll animation
+      },
+    });
     // Apply GSAP animation to each character
     gsap.fromTo(
       splitText.chars,
@@ -26,8 +36,8 @@ const AboutUsComp: React.FC = () => {
         stagger: 0.05, // Delay between each character reveal
         scrollTrigger: {
           trigger: ".home-page-about-us-container",
-          start: "top 60%", // Start revealing when 80% from the top
-          end: "bottom 35%", // End when 20% from the bottom
+          start: "top 80%", // Start revealing when 80% from the top
+          end: "bottom 60%", // End when 20% from the bottom
           scrub: true, // Smooth scroll animation
         },
       }
