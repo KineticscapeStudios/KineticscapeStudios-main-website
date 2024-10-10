@@ -27,4 +27,30 @@
   position: relative;
 }
 
+/* For tablets (768px and below) */
+@media (max-width: 768px) {
+  .image-section {
+    height: 80vh; /* Reduce the height for tablets */
+  }
+
+  .pipeline-section {
+    padding: 40px 0; /* Reduce padding for smaller screens */
+  }
+}
+
+/* For mobile phones (480px and below) */
+@media (max-width: 480px) {
+  .image-section {
+    height: 60vh; /* Further reduce the height for mobile phones */
+  }
+
+  .pipeline-section {
+    padding: 30px 0; /* Further reduce padding */
+  }
+
+  .image-section img {
+    object-fit: contain; /* Adjust image fitting for smaller screens */
+  }
+}
+
 

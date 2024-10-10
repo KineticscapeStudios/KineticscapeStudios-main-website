@@ -28,3 +28,15 @@
     cursor: pointer;
     z-index: 2;
   }
+
+
+@media (max-width: 580px) {
+  .overlay-wrapper h1 {
+    font-size: 1.8rem; 
+  }
+  .scroll-to-explore {
+    white-space: nowrap;
+    font-size: 1rem; 
+    bottom: -10px; 
+  }
+}

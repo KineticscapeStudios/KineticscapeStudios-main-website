@@ -1,5 +1,6 @@
 .our-story-wrapper
 {
+    
     width: 100%;
     height: 100%;
     position: relative;
@@ -30,4 +31,49 @@
 .head-ourstory{
     font-size: 4rem;
     font-family: "Helvetica";
+}
+
+/* mobile */
+@media (max-width: 480px) {
+
+    .our-story-content {
+        width: 150%;
+        padding: 20px; 
+        flex-direction: column-reverse;
+        align-items: flex-start; 
+    }
+
+    .our-story-info {
+        font-family: 'Helvetica Light';
+        font-style: normal;
+        font-size: 1.3rem;
+        font-weight: lighter; 
+        text-align: left;
+        max-width: 100%;
+        padding-top: 10px;
+    }
+
+    .head-ourstory {
+        font-family: 'Helvetica';
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-left: 0px;
+        font-weight: bold;
+        color: #DA5049;
+    }
+
+    .head-ourstory {
+        display: inline; 
+    }
+
+    .head-ourstory span {
+        display: inline; 
+        margin-right: 10px;
+        font-weight: lighter;
+    }
+
+    .head-ourstory br {
+        display: none;
+    }
+
 }
